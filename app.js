@@ -1,6 +1,6 @@
 (function () {
   const API_URL = "https://api.themoviedb.org/3/movie/now_playing";
-  const API_KEY = process.env.TMDB_API_KEY;
+  const API_KEY = "346ef5a17c1e81fd4fbfb858093a46b7";
   const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
   const gridEl = document.getElementById("grid");
