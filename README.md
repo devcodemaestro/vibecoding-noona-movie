@@ -62,20 +62,40 @@ http://localhost:3000
 
 ## 배포하기
 
-이 프로젝트를 온라인에 배포하고 다른 사람들과 공유하려면 `DEPLOY.md` 파일을 참고하세요.
+### Vercel을 사용한 배포 (추천)
 
-```bash
-# 자세한 배포 가이드
-cat DEPLOY.md
-```
+1. **GitHub에 코드 업로드**
 
-### 빠른 배포 (Vercel)
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/vibecoding-noona-movie.git
+   git push -u origin main
+   ```
 
-1. GitHub에 코드 업로드
-2. https://vercel.com 접속하여 GitHub으로 로그인
-3. 프로젝트 Import
-4. 환경 변수 추가: `TMDB_API_KEY=346ef5a17c1e81fd4fbfb858093a46b7`
-5. Deploy 클릭!
+2. **Vercel 배포**
+
+   - https://vercel.com 접속
+   - GitHub로 로그인
+   - "New Project" 클릭
+   - 위에서 푸시한 저장소 선택
+   - Environment Variables 추가:
+     - Key:
+     - Value:
+   - "Deploy" 클릭
+
+3. **배포 완료!**
+   - 몇 초 후 자동으로 배포됩니다
+   - `https://your-project.vercel.app` 같은 주소가 생성됩니다
+   - 이 주소를 누구나 접속할 수 있습니다!
+
+### 배포 전 확인사항
+
+- ✅ `.env` 파일이 `.gitignore`에 포함되어 있는지 확인
+- ✅ 환경 변수가 Vercel에 설정되었는지 확인
+- ✅ `vercel.json` 파일이 있는지 확인
 
 ## 기술 스택
 
