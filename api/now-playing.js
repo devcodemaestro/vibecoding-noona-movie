@@ -11,7 +11,9 @@ module.exports = async (req, res) => {
     const data = await response.json();
     
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.json(data);
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.status(200).json(data);
   } catch (error) {
     console.error("TMDB API 오류:", error);
     res.status(500).json({ error: "TMDB API 요청 실패" });
