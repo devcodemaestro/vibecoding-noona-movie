@@ -1,5 +1,6 @@
 (function () {
-  const API_URL = "/api/now-playing"; // 프록시 서버 경로
+  const API_URL = "https://api.themoviedb.org/3/movie/now_playing";
+  const API_KEY = process.env.TMDB_API_KEY;
   const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
   const gridEl = document.getElementById("grid");
@@ -7,7 +8,9 @@
   const cardTpl = document.getElementById("card-template");
 
   async function fetchNowPlaying(page = 1) {
-    const url = new URL(API_URL, window.location.origin);
+    const url = new URL(API_URL);
+    url.searchParams.set("api_key", API_KEY);
+    url.searchParams.set("language", "ko-KR");
     url.searchParams.set("page", String(page));
 
     const res = await fetch(url.toString());
